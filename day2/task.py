@@ -39,9 +39,15 @@
 # print("done")  
 
 prime = int(input('input num to check is prime number '))
-for num in range(2, prime):
-  if( prime % num == 0):
-    print('%d is not prime, it can be exact by %d' %(prime, num))
-    break
+if prime > 0:
+  if prime == 1:
+    print('1 is not prime')  
+  else:  
+    for num in range(2, prime):
+      if( prime % num == 0):
+        print('%d is not prime, it can be exact by %d' %(prime, num))
+        break
+    else:
+      print('%d is prime' %prime)  
 else:
-  print('%d is prime' %prime)  
+  print('Error, input must > 0')
